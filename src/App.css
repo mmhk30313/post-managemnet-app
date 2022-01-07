@@ -1,17 +1,55 @@
 .side-nav{
-  /* width: 0 !important; */
+  width: 1%;
   position: relative;
-  left: -75%;
-  transition: 850ms;
+  /* left: 0%; */
+  overflow: hidden;
+  transition: all 850ms linear;
+  transition-property: width, right;
+  border-start-end-radius: 10px;
+  border-end-end-radius: 10px;
 }
 
-.side-nav.auto{
+.auto{
   /* right: 75%; */
   /* position: fixed; */
   position: relative;
-  background-color: azure;
+  /* background-color: azure; */
   z-index: 100;
-  width: 75%;
-  left: 0%;
+  width: 60%;
+  /* left: 0%; */
+  transition: all 850ms linear;
+  transition-property: width, left;
+}
+
+.left-menu-bar{
+  border-right: 3px solid rgba(0, 0, 0, 0.034);
+  border-start-end-radius: 10px;
+  border-end-end-radius: 10px;
+  /* box-shadow: 10px 0 5px -2px #888; */
+}
+
+.bg-normal,.bg-style{
   transition: 850ms;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.274);
+  position: absolute;
+  width: 78%;
+  left: 22%;
+}
+
+.bg-normal{
+  background-color: white;
+}
+
+.bg-style{
+  background-color: rgba(0, 0, 0, 0.479);
+  opacity: 0.8;
+}
+
+.bg-special{
+  cursor: pointer;
+  background-color: rgb(127, 231, 235);
+}
+.bg-dangerous{
+  background-color: #e67a7a;
 }

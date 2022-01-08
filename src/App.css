@@ -1,21 +1,12 @@
 .side-nav{
   width: 1%;
   position: relative;
-<<<<<<< HEAD
-  /* left: -75%; */
-  width: 25%;
-  overflow: hidden;
-  padding: 0 !important;
-  margin: 0 !important;
-  transition: 850ms;
-=======
   /* left: 0%; */
   overflow: hidden;
   transition: all 850ms linear;
   transition-property: width, right;
   border-start-end-radius: 10px;
   border-end-end-radius: 10px;
->>>>>>> b625aee77b3ff8009d0e5314c670b9892296b050
 }
 
 .auto{
@@ -24,10 +15,6 @@
   position: relative;
   /* background-color: azure; */
   z-index: 100;
-<<<<<<< HEAD
-  width: 75%;
-  /* left: 0%; */
-=======
   width: 60%;
   /* left: 0%; */
   transition: all 850ms linear;
@@ -42,7 +29,6 @@
 }
 
 .bg-normal,.bg-style{
->>>>>>> b625aee77b3ff8009d0e5314c670b9892296b050
   transition: 850ms;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.274);

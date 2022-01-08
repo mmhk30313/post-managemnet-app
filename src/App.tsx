@@ -40,13 +40,14 @@ function App() {
         </div>
         <div style={{left: "22%", width: '78%', 
             zIndex: !isTransition ? 1 : -2,
+            transition: '1600ms',
             backgroundColor: "#EBF2F7"
           }} 
           className={`position-absolute p-5 `}
         >
             <div className={`m-4 row justify-content-center`}>
               {
-                [1,1,1].map((item, idx) => {
+                [,1,1,1,1,1,1,1,1,1].map((item, idx) => {
                   return <div key={idx} className={`${contentStyle == 'grid' ? "col-md-4" : "col-md-12"} d-flex align-items-center`}>
                       <div className="w-100 card my-2 p-3">
                         {

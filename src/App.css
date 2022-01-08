@@ -1,7 +1,11 @@
 .side-nav{
   /* width: 0 !important; */
   position: relative;
-  left: -75%;
+  /* left: -75%; */
+  width: 25%;
+  overflow: hidden;
+  padding: 0 !important;
+  margin: 0 !important;
   transition: 850ms;
 }
 
@@ -12,6 +16,6 @@
   background-color: azure;
   z-index: 100;
   width: 75%;
-  left: 0%;
+  /* left: 0%; */
   transition: 850ms;
 }

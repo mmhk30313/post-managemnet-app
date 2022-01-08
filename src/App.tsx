@@ -3,6 +3,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import LeftBar from './Components/LeftBar/LeftBar';
 import close from '../src/images/close.png';
+import MyForm from './Components/Form/MyForm';
+import Main from './Components/Main/Main';
+import rightArrow from '../src/images/double-right-arrows-symbol.png';
 function App() {
   const [isTransition, setIsTransition] = useState<boolean>(false);
   const [contentStyle, setContentStyle] = useState<string>("list");
@@ -32,10 +35,7 @@ function App() {
             setIsToggleView(true);
           }} className={`${!isTransition ? "bg-normal" : "bg-style"}`}></div>
           <div style={{backgroundColor: "#EBF2F7"}} className={`${isTransition ? "auto" : "side-nav"} left-menu-bar`}>
-            <h2>Hello</h2>
-            <h2>Hello</h2>
-            <h2>Hello</h2>
-            <h2>Hello</h2>
+            <MyForm/>
           </div>
         </div>
         <div style={{left: "22%", width: '78%', 
@@ -46,21 +46,25 @@ function App() {
         >
             <div className={`m-4 row justify-content-center`}>
               {
-                [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1].map((item, idx) => {
+                [1,1,1].map((item, idx) => {
                   return <div key={idx} className={`${contentStyle == 'grid' ? "col-md-4" : "col-md-12"} d-flex align-items-center`}>
-                      <div className="w-100 card p-3 my-2">
+                      <div className="w-100 card my-2 p-3">
                         {
                           contentStyle == 'grid'
-                          ? <div style={{height: 'fit-content'}} className={`d-flex justify-content-end`}>
-                            <img style={{height: '35px'}} className='btn btn-outline-white border p-2 rounded-circle' src={close} alt="" />
+                          ? <div style={{height: 'fit-content'}} className={`m-2 d-flex justify-content-end`}>
+                            <img style={{height: '35px'}} className='btn btn-outline-white border pt-2 rounded-circle' src={close} alt="" />
                           </div>
                           : null
                         }
-                        <p>Hello-1</p>
+                        <Main 
+                          // id={item?.id} 
+                          post={item}
+                          contentStyle={contentStyle} 
+                        />
                       </div>
                       {
                         contentStyle == 'list'
-                        ? <div style={{height: 'fit-content', cursor: 'pointer'}} className={` card border rounded-circle mx-2 p-3 shadow`}>
+                        ? <div style={{height: 'fit-content', cursor: 'pointer'}} className={`m-2 card border rounded-circle mx-2 p-3 shadow`}>
                           <img style={{height: '25px'}} src={close} alt="" />
                         </div>
                         : null
@@ -70,7 +74,13 @@ function App() {
                 })
               }
             </div>
-            
+            <div className='d-flex justify-content-center'>
+              <p className="card border rounded-circle p-2">1</p>
+              <p className="card bg-light-black text-light border rounded-circle p-2 mx-2">2</p>
+              <p className="card bg-light-black text-light border rounded-circle p-2">3</p>
+              <img style={{height: '35px'}} src={rightArrow} className="mx-2 p-2"/>
+            </div>
+        
         </div>
     </div>
   );

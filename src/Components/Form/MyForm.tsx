@@ -71,7 +71,7 @@ const MyForm = () => {
                         id="country"
                         required
                     />
-                    <span style={{position: "relative", bottom: '45px', left: '6email20px'}}><i className="fa fa-search"></i></span>
+                    <span style={{position: "relative", bottom: '45px', left: '620px'}}><i className="fa fa-search"></i></span>
                 </div>
                 <div className="form-group my-3">
                     <label className="mx-3" htmlFor="email">Email ID</label><br/>
@@ -129,6 +129,20 @@ const MyForm = () => {
                         />
                         <span className="text-center text-danger mx-2 font-weight-bold">Please enter a valid phone number</span>
                     </div>
+                </div>
+                <div className="form-group">
+                    <button
+                        style={{
+                            border: 'none',
+                            outline: 'none',
+                            borderRadius: '10px',
+                            width: '350px',
+                            height: '40px',
+                            fontWeight: 'bold'
+                        }}
+                        className="bg-special mx-auto text-center shadow text-light"
+                    >Submit</button>
+
                 </div>
             </form>
         </div>

@@ -48,7 +48,8 @@
 
 .bg-special{
   cursor: pointer;
-  background-color: rgb(127, 231, 235);
+  background-color: #5CC8A1;
+  /* background-color: rgb(127, 231, 235); */
 }
 .bg-dangerous{
   background-color: #e67a7a;

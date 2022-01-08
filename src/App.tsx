@@ -44,7 +44,7 @@ function App() {
         <div style={{
             left: "22%", width: "78%", 
             overflow: 'hidden',
-            transition: isTransition ? '250ms' : '3050ms',
+            transition: isTransition ? '250ms' : '2050ms',
             zIndex: !isTransition ? 1 : -1,
             backgroundColor: "#EBF2F7"
           }} 

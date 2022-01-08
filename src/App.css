@@ -1,10 +1,11 @@
 .side-nav{
-  width: 1%;
+  width: 0%;
   position: relative;
   /* left: 0%; */
   overflow: hidden;
-  transition: all 850ms linear;
-  transition-property: width, right;
+  transition: width 1s linear;
+  /* transition: all 850ms linear; */
+  /* transition-property: width, right; */
   border-start-end-radius: 10px;
   border-end-end-radius: 10px;
 }
@@ -17,8 +18,8 @@
   z-index: 100;
   width: 60%;
   /* left: 0%; */
-  transition: all 850ms linear;
-  transition-property: width, left;
+  transition: width 850ms linear;
+  /* transition-property: width, left; */
 }
 
 .left-menu-bar{

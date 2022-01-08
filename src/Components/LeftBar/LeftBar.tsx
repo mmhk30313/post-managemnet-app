@@ -40,8 +40,9 @@ const LeftBar = (props: any) => {
                 <h4 className="text-center">Have a Feedback?</h4>
                 <div
                  onClick={() => {
-                    setIsToggleView(false);
+                    setIsToggleView(!isToggleView);
                     setIsTransition(!isTransition);
+                    
                  }} 
                  style={{cursor: 'pointer'}}
                  className={`text-center ${isToggleView ? "bg-special " : "bg-dangerous "} p-2 card w-100 mx-auto`}

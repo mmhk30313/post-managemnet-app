@@ -30,22 +30,29 @@ function App() {
             </div>
             
           </div> 
-          <div onClick={() => {
-            setIsTransition(false);
-            setIsToggleView(true);
-          }} className={`${!isTransition ? "bg-normal" : "bg-style"}`}></div>
-          <div style={{backgroundColor: "#EBF2F7"}} className={`${isTransition ? "auto" : "side-nav"} left-menu-bar`}>
+          <div style={{backgroundColor: "#EBF2F7",overflow: 'hidden'}} className={`${isTransition ? "auto" : "side-nav"} left-menu-bar`}>
             <MyForm/>
           </div>
+          <div
+             onClick={() => {
+              setIsTransition(false);
+              setIsToggleView(true);
+            }}
+            
+            className={`${!isTransition ? "bg-normal" : "bg-style"}`}></div>
         </div>
-        <div style={{left: "22%", width: '78%', 
-            zIndex: !isTransition ? 1 : -2,
-            transition: '1600ms',
+        <div style={{
+            left: "22%", width: "78%", 
+            overflow: 'hidden',
+            transition: '250ms',
+            zIndex: !isTransition ? 1 : -1,
             backgroundColor: "#EBF2F7"
           }} 
           className={`position-absolute p-5 `}
         >
-            <div className={`m-4 row justify-content-center`}>
+            <div 
+               className={`m-4 row justify-content-center`}
+            >
               {
                 [,1,1,1,1,1,1,1,1,1].map((item, idx) => {
                   return <div key={idx} className={`${contentStyle == 'grid' ? "col-md-4" : "col-md-12"} d-flex align-items-center`}>

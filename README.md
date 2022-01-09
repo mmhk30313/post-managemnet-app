@@ -2,7 +2,7 @@
 
 ## Post Management App
 
-# Live Url
+# Host Url
 
 ### [https://post-management.netlify.app/](https://post-management.netlify.app/)
 

@@ -38,8 +38,8 @@ function App() {
               setIsTransition(false);
               setIsToggleView(true);
             }}
-            
-            className={`${!isTransition ? "bg-normal" : "bg-style"}`}></div>
+            className={`${!isTransition ? "bg-normal" : "bg-style"}`}
+            ></div>
         </div>
         <div style={{
             left: "22%", width: "78%", 

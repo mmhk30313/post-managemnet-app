@@ -6,7 +6,7 @@ import list from '../../images/list.png';
 const LeftBar = (props: any) => {
     const { isTransition, isToggleView, setIsToggleView, setContentStyle, contentStyle, setIsTransition} = props;
     return (
-        <div className='mt-5'>
+        <div className='mt-4'>
             <div className="card my-3 mx-2 p-2">
                 <div className="d-flex align-items-center">
                     <div style={{height: "50px", width: '50px', overflow: 'hidden'}} 

@@ -50,10 +50,11 @@
 .bg-special{
   cursor: pointer;
   background-color: #5CC8A1;
+  color: white;
   /* background-color: rgb(127, 231, 235); */
 }
 .bg-dangerous{
-  background-color: #e67a7a;
+  background-color: #ec8888;
 }
 .bg-light-black{
   background-color: rgba(172, 171, 171, 0.329);

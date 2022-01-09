@@ -11,7 +11,7 @@ const Main = (props: any) => {
             />
             <div className='mx-2'>
                 <h5 className='font-weight-bold'>{post?.title || "Title Hobe"}</h5>
-                <p style={{marginBottom: 0}}>{post?.description || "Accusamus odit fuga numquam est laborum."}</p>
+                <p style={{marginBottom: 0}}>{post?.body || "Accusamus odit fuga numquam est laborum."}</p>
                 <div className='font-weight-light font-italic my-2' style={{marginTop: '0'}}><small>{new Date(post?.createdAt || "2021-12-27T11:33:13-05:00").toDateString()}</small></div>
             </div>
         </div>

@@ -6,13 +6,48 @@ import close from '../src/images/close.png';
 import MyForm from './Components/Form/MyForm';
 import Main from './Components/Main/Main';
 import rightArrow from '../src/images/double-right-arrows-symbol.png';
+import { findPosts, getImages } from './utils/service';
 function App() {
   const [isTransition, setIsTransition] = useState<boolean>(false);
   const [contentStyle, setContentStyle] = useState<string>("list");
   const [isToggleView, setIsToggleView] = useState<boolean>(true);
-  // useEffect(() => {
-  //   setIsToggleView(isToggleView);
-  // }, [isToggleView]);
+  const [posts, setPosts] = useState<any[]>([]);
+
+  const getPosts = async () => {
+    const resPosts: any[] = await findPosts();
+    // console.log({resPosts});
+    if(resPosts.length){
+      const images = await getImages();
+      const allPosts:any[] = [];
+      // console.log({images});
+      
+      resPosts?.map((item: any) => {
+        const randomIdx = Math.floor(Math.random()*3);
+        let post: any = item;
+        const imgData: any = {
+          image: images[randomIdx]?.urls?.regular,
+          createdAt: images[randomIdx]?.created_at
+        };
+        post = {
+          ...post,
+          ...imgData
+        }
+        allPosts.push(post);
+      })
+      setPosts(allPosts);
+    }
+  }
+
+  useEffect(() => {
+    if(!posts.length){
+      getPosts();
+    }
+  }, [""]);
+
+  const removedPost = (id?: string) => {
+    const filterPosts = posts?.filter(post => post?.id != id);
+    setPosts(filterPosts);
+  }
   return (
     <div className="d-flex position-relative">
         <div style={{backgroundColor: "#EBF2F7"}} className='d-flex position-fixed w-100 h-100'>
@@ -48,19 +83,19 @@ function App() {
             zIndex: !isTransition ? 1 : -1,
             backgroundColor: "#EBF2F7"
           }} 
-          className={`position-absolute p-5 `}
+          className={`position-absolute px-5 py-4`}
         >
             <div 
-               className={`m-4 row justify-content-center`}
+               className={`mx-4 row justify-content-center`}
             >
               {
-                [,1,1,1,1,1,1,1,1,1].map((item, idx) => {
+                posts?.map((item, idx) => {
                   return <div key={idx} className={`${contentStyle == 'grid' ? "col-md-4" : "col-md-12"} d-flex align-items-center`}>
                       <div className="w-100 card my-2 p-3">
                         {
                           contentStyle == 'grid'
-                          ? <div style={{height: 'fit-content'}} className={`m-2 d-flex justify-content-end`}>
-                            <img style={{height: '35px'}} className='btn btn-outline-white border pt-2 rounded-circle' src={close} alt="" />
+                          ? <div onClick={() => removedPost(item?.id)} style={{height: 'fit-content'}} className={`m-2 d-flex justify-content-end`}>
+                              <img style={{height: '35px'}} className='btn btn-outline-white border pt-2 rounded-circle' src={close} alt="" />
                           </div>
                           : null
                         }
@@ -72,8 +107,8 @@ function App() {
                       </div>
                       {
                         contentStyle == 'list'
-                        ? <div style={{height: 'fit-content', cursor: 'pointer'}} className={`m-2 card border rounded-circle mx-2 p-3 shadow`}>
-                          <img style={{height: '25px'}} src={close} alt="" />
+                        ? <div onClick={() => removedPost(item?.id)} style={{height: 'fit-content', cursor: 'pointer'}} className={`m-2 card border rounded-circle mx-2 p-3 shadow`}>
+                            <img style={{height: '25px'}} src={close} alt="" />
                         </div>
                         : null
                       }
@@ -95,3 +130,7 @@ function App() {
 }
 
 export default App;
+function allPosts(allPosts: any) {
+  throw new Error('Function not implemented.');
+}
+

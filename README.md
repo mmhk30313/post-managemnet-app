@@ -21,4 +21,4 @@
 ## Description
  * There is no image in [https://jsonplaceholder.typicode.com/posts](https://jsonplaceholder.typicode.com/posts) api
  * I have used [https://api.unsplash.com/photos/?client_id=eYF-rzW776nic2O-HgC1Ee_gocdleMtcIb3n5FbxLjg](https://api.unsplash.com/photos/?client_id=eYF-rzW776nic2O-HgC1Ee_gocdleMtcIb3n5FbxLjg) api including image
- * Image is distributed with random index in posts array
+ * Images are distributed with random index in posts array

@@ -4,7 +4,7 @@
 
 # Host Url
 
-### [https://post-management.netlify.app/](https://post-management.netlify.app/)
+### [https://my-post-management.web.app/](https://my-post-management.web.app/)
 
 ## Used tools && technologies
   * TypeScript

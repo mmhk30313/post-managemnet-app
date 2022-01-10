@@ -6,7 +6,11 @@ const Main = (props: any) => {
     // console.log({post});
     const [showModal, setShowModal] = useState<boolean>(false);
     return (
-        <div onClick={() => !showModal && setShowModal(true)} className={`d-flex ${contentStyle == "grid" ? "flex-column-reverse " : " align-items-center"}`}>
+        <div 
+            onClick={() => !showModal && setShowModal(true)} 
+            className={`d-flex ${contentStyle == "grid" ? "flex-column-reverse " : " align-items-center"}`}
+            style={{cursor: 'pointer'}}
+        >
             <img 
                 style={{height: contentStyle == "grid" ? '180px' : '110px', width: contentStyle == 'grid' ? "100%" : '100px'}} 
                 className={`${contentStyle == "list" ? "rounded-circle mb-2" : " rounded"}`}

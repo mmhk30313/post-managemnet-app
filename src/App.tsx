@@ -49,7 +49,7 @@ function App() {
     setPosts(filterPosts);
   }
   return (
-    <div className="d-flex position-relative">
+    <div style={{backgroundColor: "#EBF2F7"}} className="d-flex position-relative">
         <div style={{backgroundColor: "#EBF2F7"}} className='d-flex position-fixed w-100 h-100'>
           <div style={{width: "22%"}} className={!isTransition ? "left-menu-bar" : ""}>
             <div className="py-3 px-3">
@@ -89,9 +89,10 @@ function App() {
                className={`mx-4 row justify-content-center`}
             >
               {
-                posts?.map((item, idx) => {
-                  return <div key={idx} className={`${contentStyle == 'grid' ? "col-md-4" : "col-md-12"} d-flex align-items-center`}>
-                      <div className="w-100 card my-2 p-3">
+                posts?.length 
+                ? posts?.map((item, idx) => {
+                  return <div key={idx} className={`${contentStyle == 'grid' ? `col-md-4 ${idx%3 == 1 ? "w3-animate-zoom" : `${(idx%3) ? "w3-animate-left" : "w3-animate-right"}`}` : "col-md-12  w3-animate-bottom"} d-flex align-items-center`}>
+                      <div className="w-100 card my-2 p-3 shadow">
                         {
                           contentStyle == 'grid'
                           ? <div onClick={() => removedPost(item?.id)} style={{height: 'fit-content'}} className={`m-2 d-flex justify-content-end`}>
@@ -115,9 +116,15 @@ function App() {
                       
                   </div>
                 })
+                : <div style={{height: '88vh'}} className="d-flex justify-content-center align-items-center">
+                <div style={{color: '#5CC8A1'}}className="spinner-border" role="status">
+                  <span className="sr-only">Loading...</span>
+                </div>
+              </div>
               }
             </div>
-            <div className='d-flex justify-content-center'>
+            
+            <div className='d-flex justify-content-center mt-2'>
               <p className="card border rounded-circle p-2">1</p>
               <p className="card bg-light-black text-light border rounded-circle p-2 mx-2">2</p>
               <p className="card bg-light-black text-light border rounded-circle p-2">3</p>

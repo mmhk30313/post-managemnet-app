@@ -13,7 +13,7 @@ const Modal = ({setShowModal, showModal, post}: any) => {
     }, [""]);
     return (
         <div id="myModal" className={`modal ${flagModal ? 'd-block' : 'd-none'}`}>
-            <div className="modal-content">
+            <div className="modal-content w3-animate-top">
                 <span onClick={() => handleShowModal(false)} className="close text-end">&times;</span>
                 <div className="d-flex justify-content-center align-items-center">
                     <img 

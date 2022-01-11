@@ -17,8 +17,8 @@ const Main = (props: any) => {
                 src={post?.image || avatar} alt="" 
             />
             <div className='mx-2'>
-                <h5 className='font-weight-bold'>{post?.title || "Title Hobe"}</h5>
-                <p style={{marginBottom: 0}}>{post?.body || "Accusamus odit fuga numquam est laborum."}</p>
+                <h5 className='font-weight-bold'>{post?.title.substr(0,15)+"..." || "Post Title"}</h5>
+                <p style={{marginBottom: 0}}>{post?.body.substr(1,55)+"..." || "Accusamus odit fuga numquam est laborum."}</p>
                 <div className='font-weight-light font-italic my-2' style={{marginTop: '0'}}><small>{new Date(post?.createdAt || "2021-12-27T11:33:13-05:00").toDateString()}</small></div>
             </div>
             {

@@ -4,6 +4,12 @@
 
 # Host Url
 
+* Netlify Hosting
+
+### [https://post-management.netlify.app/](https://post-management.netlify.app/)
+
+
+* Firebase Hosting
 ### [https://my-post-management.web.app/](https://my-post-management.web.app/)
 
 ## Used tools && technologies
